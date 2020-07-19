@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Router } from 'express';
 
 import TransactionsRepository from '../repositories/TransactionsRepository';
@@ -20,7 +21,7 @@ transactionRouter.post('/', (request, response) => {
   try {
     const { title, value, type } = request.body;
     const createTransaction = new CreateTransactionService(
-      transactionsRepository
+      transactionsRepository,
     );
 
     const transaction = createTransaction.execute({
